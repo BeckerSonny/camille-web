@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .defaultButton {
+        border: 2px #002060 solid;
+        border-radius: 12px;
+        color: #002060;
+        padding: 4px 8px;
+    }
+    .defaultButton:hover {
+        font-weight: 600;
+    }
+  }

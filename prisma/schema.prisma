@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @unique @default(uuid())
+  username     String   @unique
+  passwordHash String
+}
+
+model TimelineEvent {
+  id String @id @unique @default(uuid())
+  starting DateTime
+  ending DateTime
+  title String @unique
+  text String
+}
